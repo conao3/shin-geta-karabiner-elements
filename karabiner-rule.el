@@ -1,4 +1,4 @@
-;;; karabiner-json.el ---                              -*- lexical-binding: t; -*-
+;;; karabiner-rule.el ---                              -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019  Naoya Yamashita
 
@@ -204,5 +204,5 @@
       (princ "\n"))
     nil))
 
-(provide 'karabiner-json)
-;;; karabiner-json.el ends here
+(provide 'karabiner-rule)
+;;; karabiner-rule.el ends here
