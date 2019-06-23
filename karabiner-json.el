@@ -201,3 +201,6 @@
       (princ (buffer-substring-no-properties (point-min) (point-max)))
       (princ "\n"))
     nil))
+
+(provide 'karabiner-json)
+;;; karabiner-json.el ends here
