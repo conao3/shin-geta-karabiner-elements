@@ -189,25 +189,25 @@
   ;;                  nil    z     x     c     v     b     n     m    \,    \.     /    nil   nil   nil)
   `(nil ,(make-list 56 nil)
         ((k   ,(cdr '(:dummy
-                      nil   "xa"  "xi"  "xu"  "xe"  "xo"  nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "fa"  "go"  "hu"  "fi"  "fe"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   "go"  "hu"  nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
                       nil   "ho"  "ji"  "re"  "mo"  "yu"  nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "du"  "zo"  "bo"  "mu"  "fo"  nil   nil   nil   nil   nil   nil   nil   nil)))
+                      nil   "du"  "zo"  "bo"  "mu"  nil   nil   nil   nil   nil   nil   nil   nil   nil)))
          (d   ,(cdr '(:dummy
                       nil   nil   nil   nil   nil   nil   nil   nil   "@"   "["   "]"   ";"   nil   nil
-                      nil   nil   nil   nil   nil   nil   "wi"  "pa"  "yo"  "mi"  "we"  "wo"  nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   "pa"  "yo"  "mi"  nil   nil   nil   nil
                       nil   nil   nil   nil   nil   nil   "he"  "a"   "re"  "o"   "e"   nil   nil   nil
-                      nil   nil   nil   nil   nil   nil   "se"  "ne"  "be"  "pu"  "vu"  nil   nil   nil)))
+                      nil   nil   nil   nil   nil   nil   "se"  "ne"  "be"  "pu"  nil   nil   nil   nil)))
          (l   ,(cdr '(:dummy
-                      nil   "xya" "mya" "myu" "myo" "xwa" nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "di"  "me"  "ke"  "thi" "dhi" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "di"  "me"  "ke"  nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
                       nil   "wo"  "sa"  "o"   "ri"  "zu"  nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "ze"  "za"  "gi"  "ro"  "nu"  nil   nil   nil   nil   nil   nil   nil   nil)))
+                      nil   "ze"  "za"  "gi"  "ro"  nil   nil   nil   nil   nil   nil   nil   nil   nil)))
          (s   ,(cdr '(:dummy
                       nil   nil   nil   nil   nil   nil   nil   nil   "*"   "("   ")"   ":"   nil   nil
-                      nil   nil   nil   nil   nil   nil   "she" "pe"  "do"  "ya"  "je"  nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   "pe"  "do"  "ya"  "nu"  nil   nil   nil
                       nil   nil   nil   nil   nil   nil   "bi"  "ra"  "ji"  "sa"  "so"  nil   nil   nil
-                      nil   nil   nil   nil   nil   nil   "wa"  "da"  "pi"  "po"  "che" nil   nil   nil)))
+                      nil   nil   nil   nil   nil   nil   "wa"  "da"  "pi"  "po"  nil   nil   nil   nil)))
          (i   ,(cdr '(:dummy
                       nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
                       nil   "byu" "syu" "syo" "kyu" "tyu" nil   nil   nil   nil   nil   nil   nil   nil
