@@ -18,7 +18,8 @@ all:
 
 include Makefunc.mk
 
-JSONS := shingeta-layout-1.json
+JSONS :=  shingeta-layout-1.json
+JSONS  += coshigeta-layout-1.json
 
 DIRS := json
 
@@ -39,6 +40,9 @@ make-json: json $(JSONS:%=json/%)
 
 json/shingeta-layout-1.json: karabiner-rule.el
 	$(DOCKER) $(EMACS) emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta-1 us)' > $@
+
+json/shingeta-layout-1.json: karabiner-rule.el
+	$(DOCKER) $(EMACS) emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json coshigeta-1 us)' > $@
 
 ##############################
 

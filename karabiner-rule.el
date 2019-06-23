@@ -132,8 +132,10 @@
                    (karabiner-rule-make-rule-from-table layout elm (concat (and basekey (symbol-name basekey)) (and key (symbol-name key)))))
                  next))))))
 
+
 (defconst karabiner-rule-description
-  '((shingeta-1 . "新下駄配列 v1")))
+  '((shingeta-1 . "新下駄配列 v1")
+    (coshigeta-1 . "腰下駄配列 v1")))
 
 (defconst karabiner-rule-table-shingeta-1
   ;;                '(:dummy
@@ -179,6 +181,88 @@
                       nil   "su"  "ma"  "ki"  "ru"  "tu"  "te"  "ta"  "de"  "."   "bu"  nil   nil   nil)))))
   "Shingeta rule table")
 
+(defconst karabiner-rule-table-coshigeta-1
+  ;;                '(:dummy
+  ;;                  \`    \1    \2    \3    \4    \5    \6    \7    \8    \9    \0     -     =    nil
+  ;;                  nil    q     w     e     r     t     y     u     i     o     p    \[    \]    \\
+  ;;                  nil    a     s     d     f     g     h     j     k     l    \;    \'    nil   nil
+  ;;                  nil    z     x     c     v     b     n     m    \,    \.     /    nil   nil   nil)
+  `(nil ,(make-list 56 nil)
+        ((k   ,(cdr '(:dummy
+                      nil   "xa"  "xi"  "xu"  "xe"  "xo"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "fa"  "go"  "hu"  "fi"  "fe"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "ho"  "ji"  "re"  "mo"  "yu"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "du"  "zo"  "bo"  "mu"  "fo"  nil   nil   nil   nil   nil   nil   nil   nil)))
+         (d   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   "@"   "["   "]"   ";"   nil   nil
+                      nil   nil   nil   nil   nil   nil   "wi"  "pa"  "yo"  "mi"  "we"  "wo"  nil   nil
+                      nil   nil   nil   nil   nil   nil   "he"  "a"   "re"  "o"   "e"   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   "se"  "ne"  "be"  "pu"  "vu"  nil   nil   nil)))
+         (l   ,(cdr '(:dummy
+                      nil   "xya" "mya" "myu" "myo" "xwa" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "di"  "me"  "ke"  "thi" "dhi" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "wo"  "sa"  "o"   "ri"  "zu"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "ze"  "za"  "gi"  "ro"  "nu"  nil   nil   nil   nil   nil   nil   nil   nil)))
+         (s   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   "*"   "("   ")"   ":"   nil   nil
+                      nil   nil   nil   nil   nil   nil   "she" "pe"  "do"  "ya"  "je"  nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   "bi"  "ra"  "ji"  "sa"  "so"  nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   "wa"  "da"  "pi"  "po"  "che" nil   nil   nil)))
+         (i   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "byu" "syu" "syo" "kyu" "tyu" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "byo" nil   nil   "kyo" "tyo" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "bya" nil   "sya" "kya" "tya" nil   nil   nil   nil   nil   nil   nil   nil)))
+         (o   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   "xwa" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "pyu" "zyu" "zyo" "gyu" "xyu" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "pyo" nil   nil   "gyo" "xyo" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "pya" nil   "zya" "gya" "xya" nil   nil   nil   nil   nil   nil   nil   nil)))
+         (j   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "hyu" "ryu" "ryo" "myu" "nyu" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "hyo" nil   nil   "myo" "nyo" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "hya" nil   "rya" "mya" "nya" nil   nil   nil   nil   nil   nil   nil   nil)))
+         ;; 右手人差し指特殊シフト
+         (j   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "hyu" "ryu" "ryo" "myu" "nyu" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "hyo" nil   nil   "myo" "nyo" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "hya" nil   "rya" "mya" "nya" nil   nil   nil   nil   nil   nil   nil   nil)))
+         (u   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "wha" "wi"  "wu"  "whe" "who" nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil)))
+         (h   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "fa"  "fi"  "fu"  "fe"  "fo"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil)))
+         (n   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "va"  "vi"  "vu"  "ve"  "vo"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil)))
+         (m   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "thi" "dhi" "che" "je"  "jo"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil)))
+         (y   ,(cdr '(:dummy
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   "xa"  "xi"  "xu"  "xe"  "xo"  nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil
+                      nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil   nil)))
+         ;; 単打
+         (nil ,(cdr '(:dummy
+                      nil   "1"   "2"   "3"   "4"   "5"   "6"   "7"   "8"   "9"   "0"   "-"   "="   nil
+                      nil   "-"   "ni"  "ha"  ","   "ti"  "gu"  "ba"  "ko"  "ga"  "hi"  "ge"  nil   nil
+                      nil   "no"  "to"  "ka"  "nn"  "xtu" "ku"  "u"   "i"   "si"  "na"  nil   nil   nil
+                      nil   "su"  "ma"  "ki"  "ru"  "tu"  "te"  "ta"  "de"  "."   "bu"  nil   nil   nil)))))
+  "Shingeta rule table")
+
+
 (defun karabiner-rule-json-buffer ()
   (save-excursion
     (progn
