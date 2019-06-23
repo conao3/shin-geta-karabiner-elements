@@ -89,12 +89,12 @@
         (let ((lkey (pop lout))
               (out  (pop rule)))
           (when (and lkey out)
-            (push `(,(append (and basekey `(,basekey)) (and key `(,key)) (and lkey `(,lkey))) . ,out) lst))))
+            (push `(,(concat basekey (and key (symbol-name key)) (and lkey (symbol-name lkey))) . ,out) lst))))
       (append (nreverse lst)
               (when next
                 (mapcan
                  (lambda (elm)
-                   (karabiner-rule-make-rule-from-table layout elm (append (and basekey `(,basekey)) (and key `(,key)))))
+                   (karabiner-rule-make-rule-from-table layout elm (concat (and basekey (symbol-name basekey)) (and key (symbol-name key)))))
                  next))))))
 
 (defconst shingeta-rule
