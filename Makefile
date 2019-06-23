@@ -16,3 +16,10 @@
 all:
 
 include Makefunc.mk
+
+DIRS :=
+
+##############################
+
+clean:
+	rm -rf el-get elpa $(DIRS)
