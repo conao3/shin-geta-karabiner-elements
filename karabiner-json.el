@@ -20,7 +20,9 @@
 
 ;;; Commentary:
 
+;; This script run like below
 ;;
+;;   $ emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta-rule)'
 
 ;;; Code:
 
