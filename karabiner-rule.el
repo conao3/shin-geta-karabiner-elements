@@ -71,7 +71,7 @@
 ;; ref: https://github.com/tekezo/Karabiner-Elements/issues/925
 (defconst karabiner-conversion-rule
   '(("`"  . ((:key_code . "grave_accent_and_tilde")))
-    ("-"  . ((:key_code . "hypen")))
+    ("-"  . ((:key_code . "hyphen")))
     ("="  . ((:key_code . "equal_sign")))
     ("["  . ((:key_code . "open_bracket")))
     ("]"  . ((:key_code . "close_bracket")))
@@ -92,7 +92,7 @@
     ("*"  . ((:key_code . "8") (:modifires . ("shift"))))
     ("("  . ((:key_code . "9") (:modifires . ("shift"))))
     (")"  . ((:key_code . "0") (:modifires . ("shift"))))
-    ("_"  . ((:key_code . "hypen") (:modifires . ("shift"))))
+    ("_"  . ((:key_code . "hyphen") (:modifires . ("shift"))))
     ("+"  . ((:key_code . "equal_sign") (:modifires . ("shift"))))
     ("{"  . ((:key_code . "open_bracket") (:modifires . ("shift"))))
     ("}"  . ((:key_code . "close_bracket") (:modifires . ("shift"))))
