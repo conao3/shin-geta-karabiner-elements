@@ -22,7 +22,7 @@
 
 ;; This script run like below
 ;;
-;;   $ emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta-rule)'
+;;   $ emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta us)'
 
 ;;; Code:
 
@@ -131,7 +131,7 @@
                    (karabiner-rule-make-rule-from-table layout elm (concat (and basekey (symbol-name basekey)) (and key (symbol-name key)))))
                  next))))))
 
-(defconst shingeta-rule
+(defconst karabiner-rule-shingeta
   (karabiner-rule-make-rule-from-table karabiner-rule-us
     ;;              '(:dummy
     ;;                \`    \1    \2    \3    \4    \5    \6    \7    \8    \9    \0     -     =    nil
@@ -199,7 +199,7 @@
     (indent-region (point-min) (point-max)))
   (align-regexp (point-min) (point-max) "\\(\\s-*\\):"))
 
-(defmacro karabiner-rule-print-json (var)
+(defmacro karabiner-rule-print-json (var layout)
   `(with-temp-buffer
      (let ((rule (mapcar
                   (lambda (elm)
@@ -225,7 +225,7 @@
                                         `((,@(car (last ret)) (repeat . :json-false)))
                                       (setcdr (last ret 2) `((,@(car (last ret)) (repeat . :json-false))))
                                       ret))))))
-                  ,var)))
+                  ,(intern (format "karabiner-rule-%s" (symbol-name var))))))
        (erase-buffer)
        (save-excursion
          (insert
