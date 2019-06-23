@@ -197,10 +197,11 @@
   (save-excursion (while (search-forward ":" nil t) (replace-match " : " nil t)))
   (save-excursion (while (search-forward "," nil t) (replace-match ", " nil t)))
   (delete-trailing-whitespace)
-  (let ((js-indent-level 2))
+  (let ((js-indent-level  2)
+        (indent-tabs-mode nil))
     (json-mode)
-    (indent-region (point-min) (point-max)))
-  (align-regexp (point-min) (point-max) "\\(\\s-*\\):"))
+    (indent-region (point-min) (point-max))
+    (align-regexp (point-min) (point-max) "\\(\\s-*\\):")))
 
 (defmacro karabiner-rule-print-json (var layout)
   `(with-temp-buffer
