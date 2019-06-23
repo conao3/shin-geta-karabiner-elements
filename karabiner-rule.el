@@ -165,44 +165,44 @@
     (indent-region (point-min) (point-max)))
   (align-regexp (point-min) (point-max) "\\(\\s-*\\):"))
 
-(defun karabiner-rule-print-json (var)
-  (with-temp-buffer
-    (let ((rule (mapcar
-                 (lambda (elm)
-                   (let ((from (car elm))
-                         (to   (cdr elm)))
-                     `((:type . "basic")
-                       (:conditions . (((:type . "input_source_if")
-                                        (:input_sources . (((:language . "ja")))))))
-                       (:from . ,(if (= 1 (length (if (listp from) from (split-string from "" 'omit))))
-                                     (car (mapcar
-                                           (lambda (elm)
-                                             `((:key_code . ,elm)))
-                                           (if (listp from) from (split-string from "" 'omit))))
-                                   `((:simultaneous . ,(mapcar
-                                                        (lambda (elm)
-                                                          `((:key_code . ,elm)))
-                                                        (if (listp from) from (split-string from "" 'omit)))))))
-                       (:to   . ,(let ((ret (mapcar
-                                             (lambda (elm)
-                                               `((:key_code . ,elm)))
-                                             (if (listp to) to (split-string to "" 'omit)))))
-                                   (if (= 1 (length ret))
-                                       `((,(caar (last ret)) (repeat . :json-false)))
-                                     (setcdr (last ret 2) `((,(caar (last ret)) (repeat . :json-false))))
-                                     ret))))))
-                 var)))
-      (erase-buffer)
-      (save-excursion
-        (insert
-         (json-encode
-          `((title . "日本語用かな配列")
-            (rules . (((description . "新下駄配列 ver. 1.0 (for keyboard type: jis)")
-                       (manupulators . ,rule))))))))
-      (karabiner-rule-json-buffer)
-      (princ (buffer-substring-no-properties (point-min) (point-max)))
-      (princ "\n"))
-    nil))
+(defmacro karabiner-rule-print-json (var)
+  `(with-temp-buffer
+     (let ((rule (mapcar
+                  (lambda (elm)
+                    (let ((from (car elm))
+                          (to   (cdr elm)))
+                      `((:type . "basic")
+                        (:conditions . (((:type . "input_source_if")
+                                         (:input_sources . (((:language . "ja")))))))
+                        (:from . ,(if (= 1 (length (if (listp from) from (split-string from "" 'omit))))
+                                      (car (mapcar
+                                            (lambda (elm)
+                                              `((:key_code . ,elm)))
+                                            (if (listp from) from (split-string from "" 'omit))))
+                                    `((:simultaneous . ,(mapcar
+                                                         (lambda (elm)
+                                                           `((:key_code . ,elm)))
+                                                         (if (listp from) from (split-string from "" 'omit)))))))
+                        (:to   . ,(let ((ret (mapcar
+                                              (lambda (elm)
+                                                `((:key_code . ,elm)))
+                                              (if (listp to) to (split-string to "" 'omit)))))
+                                    (if (= 1 (length ret))
+                                        `((,(caar (last ret)) (repeat . :json-false)))
+                                      (setcdr (last ret 2) `((,(caar (last ret)) (repeat . :json-false))))
+                                      ret))))))
+                  ,var)))
+       (erase-buffer)
+       (save-excursion
+         (insert
+          (json-encode
+           `((title . "日本語用かな配列")
+             (rules . (((description . "新下駄配列 ver. 1.0 (for keyboard type: jis)")
+                        (manupulators . ,rule))))))))
+       (karabiner-rule-json-buffer)
+       (princ (buffer-substring-no-properties (point-min) (point-max)))
+       (princ "\n"))
+     nil))
 
 (provide 'karabiner-rule)
 ;;; karabiner-rule.el ends here
