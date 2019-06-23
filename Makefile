@@ -17,6 +17,8 @@ all:
 
 include Makefunc.mk
 
+JSONS := shingeta-layout-1.json
+
 DIRS := json
 
 DOCKER := docker run --rm -v $$(pwd)/:/.make
@@ -32,7 +34,7 @@ all: make-json
 $(DIRS):
 	mkdir -p $@
 
-make-json: json json/shingeta-layout.json
+make-json: json $(JSONS:%=json/%)
 
 json/shingeta-layout-1.json: karabiner-rule.el
 	$(DOCKER) $(EMACS) emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta-1 us)' > $@

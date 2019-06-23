@@ -1,6 +1,6 @@
-{"title"		: "日本語用かな配列",
+{"title"		: "karabiner-rule-maker",
  "rules"		: [
-   {"description"	: "新下駄配列 ver. 1.0 (for keyboard type :  jis)",
+   {"description"	: "新下駄配列 v1 (for us kayboard)",
     "manupulators"	: [
       {
 	"type"		: "basic",
