@@ -17,9 +17,29 @@ all:
 
 include Makefunc.mk
 
-DIRS :=
+DIRS := json
+
+EMACS := conao3/emacs:alpine-min-26.2
+
+##################################################
+
+.PHONY: all make-json
+all: make-json
 
 ##############################
+
+$(DIRS):
+	mkdir -p $@
+
+make-json: json json/shingeta-layout.json
+
+json/shingeta-layout.json: karabiner-json.el
+	docker run --rm -it -v $$(pwd)/:/karabiner $(EMACS) sh -c "emacs --batch -l /karabiner/$< --eval='(karabiner-rule-print-json shingeta-rule)' > /karabiner/$@"
+
+##############################
+
+docker-pull:
+	docker pull $(EMACS)
 
 clean:
 	rm -rf el-get elpa $(DIRS)
