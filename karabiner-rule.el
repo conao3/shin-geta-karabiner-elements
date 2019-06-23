@@ -131,6 +131,9 @@
                    (karabiner-rule-make-rule-from-table layout elm (concat (and basekey (symbol-name basekey)) (and key (symbol-name key)))))
                  next))))))
 
+(defconst karabiner-rule-description
+  '((shingeta . "新下駄配列")))
+
 (defconst karabiner-rule-table-shingeta
   ;;              '(:dummy
   ;;                \`    \1    \2    \3    \4    \5    \6    \7    \8    \9    \0     -     =    nil
@@ -230,8 +233,8 @@
        (save-excursion
          (insert
           (json-encode
-           `((title . "日本語用かな配列")
-             (rules . (((description . "新下駄配列 ver. 1.0 (for keyboard type: jis)")
+           `((title . "karabiner-rule-maker")
+             (rules . (((description . ,(format "%s (for %s kayboard)" (alist-get ',var karabiner-rule-description) ',layout))
                         (manupulators . ,rule))))))))
        (karabiner-rule-json-buffer)
        (princ (buffer-substring-no-properties (point-min) (point-max)))
