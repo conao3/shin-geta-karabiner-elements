@@ -68,6 +68,40 @@
 (leaf json-mode :ensure t :require t)
 
 
+(defconst karabiner-conversion-rule
+  '(("`"  . ((:key_code . "grave_accent_and_tilde")))
+    ("-"  . ((:key_code . "hypen")))
+    ("="  . ((:key_code . "equal_sign")))
+    ("["  . ((:key_code . "open_bracket")))
+    ("]"  . ((:key_code . "close_bracket")))
+    ("\\" . ((:key_code . "backslash")))
+    (";"  . ((:key_code . "semicolon")))
+    ("'"  . ((:key_code . "quote")))
+    (","  . ((:key_code . "comma")))
+    ("."  . ((:key_code . "period")))
+    ("/"  . ((:key_code . "slash")))
+    ("¥"  . ((:key_code . "internatioal3")))
+    ("!"  . ((:key_code . "1") (:modifires . ("shift"))))
+    ("@"  . ((:key_code . "2") (:modifires . ("shift"))))
+    ("#"  . ((:key_code . "3") (:modifires . ("shift"))))
+    ("$"  . ((:key_code . "4") (:modifires . ("shift"))))
+    ("%"  . ((:key_code . "5") (:modifires . ("shift"))))
+    ("^"  . ((:key_code . "6") (:modifires . ("shift"))))
+    ("&"  . ((:key_code . "7") (:modifires . ("shift"))))
+    ("*"  . ((:key_code . "8") (:modifires . ("shift"))))
+    ("("  . ((:key_code . "9") (:modifires . ("shift"))))
+    (")"  . ((:key_code . "0") (:modifires . ("shift"))))
+    ("_"  . ((:key_code . "hypen") (:modifires . ("shift"))))
+    ("+"  . ((:key_code . "equal_sign") (:modifires . ("shift"))))
+    ("{"  . ((:key_code . "open_bracket") (:modifires . ("shift"))))
+    ("}"  . ((:key_code . "close_bracket") (:modifires . ("shift"))))
+    ("|"  . ((:key_code . "backslash") (:modifires . ("shift"))))
+    (":"  . ((:key_code . "semicolon") (:modifires . ("shift"))))
+    ("\"" . ((:key_code . "quote") (:modifires . ("shift"))))
+    ("<"  . ((:key_code . "comma") (:modifires . ("shift"))))
+    (">"  . ((:key_code . "period") (:modifires . ("shift"))))
+    ("?"  . ((:key_code . "slash") (:modifires . ("shift"))))))
+
 (defconst karabiner-rule-us
   (cdr '(:dummy
          \`  \1  \2  \3  \4  \5  \6  \7  \8  \9  \0   -   =  nil
@@ -177,15 +211,15 @@
                         (:from . ,(if (= 1 (length (if (listp from) from (split-string from "" 'omit))))
                                       (car (mapcar
                                             (lambda (elm)
-                                              `((:key_code . ,elm)))
+                                              (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=))
                                             (if (listp from) from (split-string from "" 'omit))))
                                     `((:simultaneous . ,(mapcar
                                                          (lambda (elm)
-                                                           `((:key_code . ,elm)))
+                                                           (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=))
                                                          (if (listp from) from (split-string from "" 'omit)))))))
                         (:to   . ,(let ((ret (mapcar
                                               (lambda (elm)
-                                                `((:key_code . ,elm)))
+                                                (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=))
                                               (if (listp to) to (split-string to "" 'omit)))))
                                     (if (= 1 (length ret))
                                         `((,(caar (last ret)) (repeat . :json-false)))
