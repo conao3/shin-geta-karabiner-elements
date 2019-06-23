@@ -68,6 +68,7 @@
 (leaf json-mode :ensure t :require t)
 
 
+;; ref: https://github.com/tekezo/Karabiner-Elements/issues/925
 (defconst karabiner-conversion-rule
   '(("`"  . ((:key_code . "grave_accent_and_tilde")))
     ("-"  . ((:key_code . "hypen")))
