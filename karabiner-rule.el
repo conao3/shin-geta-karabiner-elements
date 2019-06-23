@@ -234,9 +234,9 @@
        (save-excursion
          (insert
           (json-encode
-           `((title . "karabiner-rule-maker")
-             (rules . (((description . ,(format "%s (for %s kayboard)" (alist-get ',var karabiner-rule-description) ',layout))
-                        (manupulators . ,rule))))))))
+           `((:title . "karabiner-rule-maker")
+             (:rules . (((:description . ,(format "%s (for %s kayboard)" (alist-get ',var karabiner-rule-description) ',layout))
+                         (:manipulators . ,rule))))))))
        (karabiner-rule-json-buffer)
        (princ (buffer-substring-no-properties (point-min) (point-max)))
        (princ "\n"))
