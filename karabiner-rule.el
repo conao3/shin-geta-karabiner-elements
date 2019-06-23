@@ -102,7 +102,7 @@
     (">"  . ((:key_code . "period") (:modifires . ("shift"))))
     ("?"  . ((:key_code . "slash") (:modifires . ("shift"))))))
 
-(defconst karabiner-rule-us
+(defconst karabiner-rule-layout-us
   (cdr '(:dummy
          \`  \1  \2  \3  \4  \5  \6  \7  \8  \9  \0   -   =  nil
          nil  q   w   e   r   t   y   u   i   o   p  \[  \]  \\
@@ -131,48 +131,47 @@
                    (karabiner-rule-make-rule-from-table layout elm (concat (and basekey (symbol-name basekey)) (and key (symbol-name key)))))
                  next))))))
 
-(defconst karabiner-rule-shingeta
-  (karabiner-rule-make-rule-from-table karabiner-rule-us
-    ;;              '(:dummy
-    ;;                \`    \1    \2    \3    \4    \5    \6    \7    \8    \9    \0     -     =    nil
-    ;;                nil    q     w     e     r     t     y     u     i     o     p    \[    \]    \\
-    ;;                nil    a     s     d     f     g     h     j     k     l    \;    \'    nil   nil
-    ;;                nil    z     x     c     v     b     n     m    \,    \.     /    nil   nil   nil)
-    `(nil ,(cdr     '(:dummy
-                      nil   "1"   "2"   "3"   "4"   "5"   "6"   "7"   "8"   "9"   "0"   "-"   "="   nil
-                      nil   "-"   "ni"  "ha"  ","   "ti"  "gu"  "ba"  "ko"  "ga"  "hi"  "ge"  nil   nil
-                      nil   "no"  "to"  "ka"  "nn"  "xtu" "ku"  "u"   "i"   "si"  "na"  nil   nil   nil
-                      nil   "su"  "ma"  "ki"  "ru"  "tu"  "te"  "ta"  "de"  "."   "bu"  nil   nil   nil))
-          ((k ,(cdr '(:dummy
-                      nil   "xa"  "xi"  "xu"  "xe"  "xo"  nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "fa"  "go"  "hu"  "fi"  "fe"  nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "ho"  "ji"  "re"  "mo"  "yu"  nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "du"  "zo"  "bo"  "mu"  "fo"  nil   nil   nil   nil   nil   nil   nil   nil)))
-           (d ,(cdr '(:dummy
-                      nil   nil   nil   nil   nil   nil   nil   nil   "["   "]"   ";"   "@"   nil   nil
-                      nil   nil   nil   nil   nil   nil   "wi"  "pa"  "yo"  "mi"  "we"  "wo"  nil   nil
-                      nil   nil   nil   nil   nil   nil   "he"  "a"   "re"  "o"   "e"   nil   nil   nil
-                      nil   nil   nil   nil   nil   nil   "se"  "ne"  "be"  "pu"  "vu"  nil   nil   nil)))
-           (l ,(cdr '(:dummy
-                      nil   "xya" "mya" "myu" "myo" "xwa" nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "di"  "me"  "ke"  "thi" "dhi" nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "wo"  "sa"  "o"   "ri"  "zu"  nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "ze"  "za"  "gi"  "ro"  "nu"  nil   nil   nil   nil   nil   nil   nil   nil)))
-           (s ,(cdr '(:dummy
-                      nil   nil   nil   nil   nil   nil   nil   nil   "("   ")"   ":"   "*"   nil   nil
-                      nil   nil   nil   nil   nil   nil   "she" "pe"  "do"  "ya"  "je"  nil   nil   nil
-                      nil   nil   nil   nil   nil   nil   "bi"  "ra"  "ji"  "sa"  "so"  nil   nil   nil
-                      nil   nil   nil   nil   nil   nil   "wa"  "da"  "pi"  "po"  "che" nil   nil   nil)))
-           (i ,(cdr '(:dummy
-                      nil   "xyu" "bya" "byu" "byo" nil   nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "hyu" "syu" "syo" "kyu" "tyu" nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "hyo" nil   nil   "kyo" "tyo" nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "hya" nil   "sya" "kya" "tya" nil   nil   nil   nil   nil   nil   nil   nil)))
-           (o ,(cdr '(:dummy
-                      nil   "xyo" "pya" "pyu" "pyo" nil   nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "ryu" "ju"  "jo"  "gyu" "nyu" nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "ryo" nil   nil   "gyo" "nyo" nil   nil   nil   nil   nil   nil   nil   nil
-                      nil   "rya" nil   "ja"  "gya" "nya" nil   nil   nil   nil   nil   nil   nil   nil))))))
+(defconst karabiner-rule-table-shingeta
+  ;;              '(:dummy
+  ;;                \`    \1    \2    \3    \4    \5    \6    \7    \8    \9    \0     -     =    nil
+  ;;                nil    q     w     e     r     t     y     u     i     o     p    \[    \]    \\
+  ;;                nil    a     s     d     f     g     h     j     k     l    \;    \'    nil   nil
+  ;;                nil    z     x     c     v     b     n     m    \,    \.     /    nil   nil   nil)
+  `(nil ,(cdr     '(:dummy
+                    nil   "1"   "2"   "3"   "4"   "5"   "6"   "7"   "8"   "9"   "0"   "-"   "="   nil
+                    nil   "-"   "ni"  "ha"  ","   "ti"  "gu"  "ba"  "ko"  "ga"  "hi"  "ge"  nil   nil
+                    nil   "no"  "to"  "ka"  "nn"  "xtu" "ku"  "u"   "i"   "si"  "na"  nil   nil   nil
+                    nil   "su"  "ma"  "ki"  "ru"  "tu"  "te"  "ta"  "de"  "."   "bu"  nil   nil   nil))
+        ((k ,(cdr '(:dummy
+                    nil   "xa"  "xi"  "xu"  "xe"  "xo"  nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "fa"  "go"  "hu"  "fi"  "fe"  nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "ho"  "ji"  "re"  "mo"  "yu"  nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "du"  "zo"  "bo"  "mu"  "fo"  nil   nil   nil   nil   nil   nil   nil   nil)))
+         (d ,(cdr '(:dummy
+                    nil   nil   nil   nil   nil   nil   nil   nil   "["   "]"   ";"   "@"   nil   nil
+                    nil   nil   nil   nil   nil   nil   "wi"  "pa"  "yo"  "mi"  "we"  "wo"  nil   nil
+                    nil   nil   nil   nil   nil   nil   "he"  "a"   "re"  "o"   "e"   nil   nil   nil
+                    nil   nil   nil   nil   nil   nil   "se"  "ne"  "be"  "pu"  "vu"  nil   nil   nil)))
+         (l ,(cdr '(:dummy
+                    nil   "xya" "mya" "myu" "myo" "xwa" nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "di"  "me"  "ke"  "thi" "dhi" nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "wo"  "sa"  "o"   "ri"  "zu"  nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "ze"  "za"  "gi"  "ro"  "nu"  nil   nil   nil   nil   nil   nil   nil   nil)))
+         (s ,(cdr '(:dummy
+                    nil   nil   nil   nil   nil   nil   nil   nil   "("   ")"   ":"   "*"   nil   nil
+                    nil   nil   nil   nil   nil   nil   "she" "pe"  "do"  "ya"  "je"  nil   nil   nil
+                    nil   nil   nil   nil   nil   nil   "bi"  "ra"  "ji"  "sa"  "so"  nil   nil   nil
+                    nil   nil   nil   nil   nil   nil   "wa"  "da"  "pi"  "po"  "che" nil   nil   nil)))
+         (i ,(cdr '(:dummy
+                    nil   "xyu" "bya" "byu" "byo" nil   nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "hyu" "syu" "syo" "kyu" "tyu" nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "hyo" nil   nil   "kyo" "tyo" nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "hya" nil   "sya" "kya" "tya" nil   nil   nil   nil   nil   nil   nil   nil)))
+         (o ,(cdr '(:dummy
+                    nil   "xyo" "pya" "pyu" "pyo" nil   nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "ryu" "ju"  "jo"  "gyu" "nyu" nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "ryo" nil   nil   "gyo" "nyo" nil   nil   nil   nil   nil   nil   nil   nil
+                    nil   "rya" nil   "ja"  "gya" "nya" nil   nil   nil   nil   nil   nil   nil   nil)))))
   "Shingeta rule table")
 
 (defun karabiner-rule-json-buffer ()
@@ -225,7 +224,8 @@
                                         `((,@(car (last ret)) (repeat . :json-false)))
                                       (setcdr (last ret 2) `((,@(car (last ret)) (repeat . :json-false))))
                                       ret))))))
-                  ,(intern (format "karabiner-rule-%s" (symbol-name var))))))
+                  (karabiner-rule-make-rule-from-table ,(intern (format "karabiner-rule-layout-%s" (symbol-name layout)))
+                    ,(intern (format "karabiner-rule-table-%s" (symbol-name var)))))))
        (erase-buffer)
        (save-excursion
          (insert
