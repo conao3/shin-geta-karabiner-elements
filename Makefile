@@ -34,8 +34,8 @@ $(DIRS):
 
 make-json: json json/shingeta-layout.json
 
-json/shingeta-layout.json: karabiner-rule.el
-	$(DOCKER) $(EMACS) emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta us)' > $@
+json/shingeta-layout-1.json: karabiner-rule.el
+	$(DOCKER) $(EMACS) emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta-1 us)' > $@
 
 ##############################
 

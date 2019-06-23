@@ -22,7 +22,7 @@
 
 ;; This script run like below
 ;;
-;;   $ emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta us)'
+;;   $ emacs --batch -l /.make/$< --eval='(karabiner-rule-print-json shingeta-1 us)'
 
 ;;; Code:
 
@@ -132,9 +132,9 @@
                  next))))))
 
 (defconst karabiner-rule-description
-  '((shingeta . "新下駄配列")))
+  '((shingeta-1 . "新下駄配列 v1")))
 
-(defconst karabiner-rule-table-shingeta
+(defconst karabiner-rule-table-shingeta-1
   ;;              '(:dummy
   ;;                \`    \1    \2    \3    \4    \5    \6    \7    \8    \9    \0     -     =    nil
   ;;                nil    q     w     e     r     t     y     u     i     o     p    \[    \]    \\
