@@ -279,7 +279,7 @@
           (forward-char) (insert "\n")))
       (delete-char -1)
       (backward-char 1) (delete-char -1)))
-  (save-excursion (while (search-forward ":" nil t) (replace-match " : " nil t)))
+  (save-excursion (while (search-forward ":" nil t) (replace-match ": " nil t)))
   (save-excursion (while (search-forward "," nil t) (replace-match ", " nil t)))
   (delete-trailing-whitespace)
   (let ((js-indent-level  2)
