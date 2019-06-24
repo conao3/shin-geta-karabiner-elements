@@ -297,12 +297,12 @@
                       `(((:type . "basic")
                          (:conditions . (((:type . "input_source_if")
                                           (:input_sources . (((:language . "ja")))))))
-                         (:from . ((:simultaneous . (,(append
-                                                       (mapcar
-                                                        (lambda (elm)
-                                                          (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=))
-                                                        (if (listp from) from (split-string from "" 'omit)))
-                                                       '(((:key_code . "spacebar"))))))))
+                         (:from . ((:simultaneous . ,(append
+                                                      (mapcar
+                                                       (lambda (elm)
+                                                         (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=))
+                                                       (if (listp from) from (split-string from "" 'omit)))
+                                                      '(((:key_code . "spacebar")))))))
                          (:to   . ,(let ((ret (mapcar
                                                (lambda (elm)
                                                  (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=))
