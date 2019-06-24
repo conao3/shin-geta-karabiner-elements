@@ -300,7 +300,8 @@
                         (:from . ,(if (= 1 (length (if (listp from) from (split-string from "" 'omit))))
                                       (car (mapcar
                                             (lambda (elm)
-                                              (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=))
+                                              (append (alist-get elm karabiner-conversion-rule `((:key_code . ,elm)) nil #'string=)
+                                                      '((:modifiers . ((:optional . ("shift")))))))
                                             (if (listp from) from (split-string from "" 'omit))))
                                     `((:simultaneous . ,(mapcar
                                                          (lambda (elm)
