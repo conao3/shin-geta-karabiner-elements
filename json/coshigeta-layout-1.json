@@ -61,7 +61,7 @@
         "type"       : "basic",
         "conditions" : [{"type" : "input_source_if", "input_sources" : [{"language" : "ja"}]}],
         "from"       : {"simultaneous" : [{"key_code" : "d"}, {"key_code" : "8"}]},
-        "to"         : [{"key_code" : "2", "modifires" : ["shift"], "repeat" : false}]},
+        "to"         : [{"key_code" : "2", "modifiers" : ["shift"], "repeat" : false}]},
       {
         "type"       : "basic",
         "conditions" : [{"type" : "input_source_if", "input_sources" : [{"language" : "ja"}]}],
@@ -201,22 +201,22 @@
         "type"       : "basic",
         "conditions" : [{"type" : "input_source_if", "input_sources" : [{"language" : "ja"}]}],
         "from"       : {"simultaneous" : [{"key_code" : "s"}, {"key_code" : "8"}]},
-        "to"         : [{"key_code" : "8", "modifires" : ["shift"], "repeat" : false}]},
+        "to"         : [{"key_code" : "8", "modifiers" : ["shift"], "repeat" : false}]},
       {
         "type"       : "basic",
         "conditions" : [{"type" : "input_source_if", "input_sources" : [{"language" : "ja"}]}],
         "from"       : {"simultaneous" : [{"key_code" : "s"}, {"key_code" : "9"}]},
-        "to"         : [{"key_code" : "9", "modifires" : ["shift"], "repeat" : false}]},
+        "to"         : [{"key_code" : "9", "modifiers" : ["shift"], "repeat" : false}]},
       {
         "type"       : "basic",
         "conditions" : [{"type" : "input_source_if", "input_sources" : [{"language" : "ja"}]}],
         "from"       : {"simultaneous" : [{"key_code" : "s"}, {"key_code" : "0"}]},
-        "to"         : [{"key_code" : "0", "modifires" : ["shift"], "repeat" : false}]},
+        "to"         : [{"key_code" : "0", "modifiers" : ["shift"], "repeat" : false}]},
       {
         "type"       : "basic",
         "conditions" : [{"type" : "input_source_if", "input_sources" : [{"language" : "ja"}]}],
         "from"       : {"simultaneous" : [{"key_code" : "s"}, {"key_code" : "hyphen"}]},
-        "to"         : [{"key_code" : "semicolon", "modifires" : ["shift"], "repeat" : false}]},
+        "to"         : [{"key_code" : "semicolon", "modifiers" : ["shift"], "repeat" : false}]},
       {
         "type"       : "basic",
         "conditions" : [{"type" : "input_source_if", "input_sources" : [{"language" : "ja"}]}],
